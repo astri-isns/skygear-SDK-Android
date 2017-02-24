@@ -2,10 +2,12 @@ package io.skygear.skygear_example;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -67,6 +69,17 @@ public class RecordQueryActivity extends AppCompatActivity {
         this.display = (TextView) findViewById(R.id.record_display);
 
         this.updateRecordDisplay();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void updateRecordDisplay() {

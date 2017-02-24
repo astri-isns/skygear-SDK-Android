@@ -7,7 +7,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <permission
         android:name="io.skygear.skygear_example.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
@@ -31,28 +32,68 @@
         </activity>
         <activity
             android:name=".SignupActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".RecordCreateActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".RecordQueryActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".PubsubActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".UserQueryActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".LambdaActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".ServerConfigurationActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
 
         <!-- Delegate Skygear SDK to manage GCM Services -->
         <receiver
@@ -64,6 +105,7 @@
                 <category android:name="io.skygear.skygear_example" />
             </intent-filter>
         </receiver>
+
         <service
             android:name="io.skygear.skygear.gcm.ListenerService"
             android:exported="false">
@@ -80,8 +122,7 @@
         </service>
         <service
             android:name="io.skygear.skygear.gcm.RegistrationIntentService"
-            android:exported="false">
-        </service>
+            android:exported="false"/>
 
     </application>
 
