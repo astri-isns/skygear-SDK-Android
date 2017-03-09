@@ -516,7 +516,6 @@ public final class Container implements AuthResolver {
     public void callLambdaFunction(String name, Object[] args, LambdaResponseHandler handler) {
         LambdaRequest request = new LambdaRequest(name, args);
         request.responseHandler = handler;
-
         this.requestManager.sendRequest(request);
     }
 }

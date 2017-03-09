@@ -23,6 +23,7 @@ class MockHttpStack implements HttpStack {
         try {
             response.setEntity(new StringEntity("{}"));
         } catch (UnsupportedEncodingException e) {
+            //do-nothing
         }
 
         return response;

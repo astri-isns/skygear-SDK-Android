@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -43,7 +44,7 @@ public class LambdaRequest extends Request {
             for (int idx = 0; idx < args.length; idx++) {
                 if (!this.isCompatibleArgument(args[idx])) {
                     throw new InvalidParameterException(
-                            String.format("Argument at index %d is incompatible", idx)
+                            String.format(Locale.US, "Argument at index %d is incompatible", idx)
                     );
                 }
             }

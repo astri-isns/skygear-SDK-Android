@@ -57,7 +57,7 @@ public class Error extends Exception {
     /**
      * The Error Codes.
      */
-    public static enum Code {
+    public enum Code {
         /**
          * Not authenticated error.
          */
@@ -150,7 +150,7 @@ public class Error extends Exception {
 
         private final int value;
 
-        private Code(int value) {
+        Code(int value) {
             this.value = value;
         }
 

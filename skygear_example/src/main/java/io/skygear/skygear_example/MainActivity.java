@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthSuccess(User user) {
                 loading.dismiss();
 
-                StringBuffer buffer = new StringBuffer();
+                StringBuilder buffer = new StringBuilder();
                 buffer.append("Current user:\n");
                 buffer.append(String.format("\tUser ID: %s\n", user.getId()));
                 buffer.append(String.format("\tUsername: %s\n", user.getUsername()));

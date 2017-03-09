@@ -104,7 +104,8 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="#ffcccccc"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/content_desc_record_asset" />
 
             <Button
                 android:id="@+id/record_asset_button"

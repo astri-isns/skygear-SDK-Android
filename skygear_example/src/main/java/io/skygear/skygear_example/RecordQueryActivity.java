@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import org.json.JSONException;
 
+import java.util.Locale;
 import java.util.Map;
 
 import io.skygear.skygear.Container;
@@ -23,7 +24,6 @@ import io.skygear.skygear.Query;
 import io.skygear.skygear.Record;
 import io.skygear.skygear.RecordDeleteResponseHandler;
 import io.skygear.skygear.RecordQueryResponseHandler;
-import io.skygear.skygear.RecordSaveResponseHandler;
 
 public class RecordQueryActivity extends AppCompatActivity {
     private static final String TAG = RecordQueryActivity.class.getSimpleName();
@@ -75,12 +75,12 @@ public class RecordQueryActivity extends AppCompatActivity {
             displayText = "No records";
             this.deleteButton.setEnabled(false);
         } else {
-            StringBuffer buffer = new StringBuffer();
-            buffer.append(String.format("Got %d records\n\n", this.records.length));
+            StringBuilder buffer = new StringBuilder();
+            buffer.append(String.format(Locale.US,"Got %d records\n\n", this.records.length));
 
             try {
                 for (int idx = 0; idx < this.records.length; idx++) {
-                    buffer.append(String.format("Record[%d]:\n", idx))
+                    buffer.append(String.format(Locale.US,"Record[%d]:\n", idx))
                             .append(this.records[idx].toJson().toString(2))
                             .append("\n\n");
                 }
@@ -154,7 +154,7 @@ public class RecordQueryActivity extends AppCompatActivity {
                 RecordQueryActivity.this.updateRecordDisplay();
 
                 successDialog.setMessage(
-                        String.format("Successfully got %d records", records.length)
+                        String.format(Locale.US,"Successfully got %d records", records.length)
                 );
                 successDialog.show();
             }
@@ -181,7 +181,7 @@ public class RecordQueryActivity extends AppCompatActivity {
         } else {
             new AlertDialog.Builder(this)
                     .setTitle("Confirm delete")
-                    .setMessage(String.format("Are you sure to delete the %d records ?", this.records.length))
+                    .setMessage(String.format(Locale.US,"Are you sure to delete the %d records ?", this.records.length))
                     .setNegativeButton("No", null)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
@@ -216,7 +216,7 @@ public class RecordQueryActivity extends AppCompatActivity {
                 RecordQueryActivity.this.updateRecordDisplay();
 
                 successDialog.setMessage(
-                        String.format("Successfully delete %d records", ids.length)
+                        String.format(Locale.US,"Successfully delete %d records", ids.length)
                 );
                 successDialog.show();
             }
@@ -225,7 +225,7 @@ public class RecordQueryActivity extends AppCompatActivity {
             public void onDeletePartialSuccess(String[] ids, Map<String, Error> errors) {
                 RecordQueryActivity.this.records = null;
                 partiallySuccessDialog.setMessage(
-                        String.format("%d successes\n%d fails", ids.length, errors.size())
+                        String.format(Locale.US, "%d successes\n%d fails", ids.length, errors.size())
                 );
                 partiallySuccessDialog.show();
             }
@@ -233,7 +233,7 @@ public class RecordQueryActivity extends AppCompatActivity {
             @Override
             public void onDeleteFail(Error error) {
                 failDialog.setMessage(
-                        String.format("Fail with reason:\n%s", error.getMessage())
+                        String.format(Locale.US, "Fail with reason:\n%s", error.getMessage())
                 );
                 failDialog.show();
             }

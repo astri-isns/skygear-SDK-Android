@@ -53,8 +53,7 @@ class QueryPredicate {
         predicate.put(functionName);
 
         if (args != null) {
-            for (int idx = 0; idx < args.length; idx++) {
-                Object perArg = args[idx];
+            for (Object perArg : args) {
                 predicate.put(perArg);
             }
         }

@@ -74,7 +74,7 @@ public class UserQueryActivity extends AppCompatActivity {
                 successDialog.setMessage(message);
                 successDialog.show();
 
-                StringBuffer buffer = new StringBuffer();
+                StringBuilder buffer = new StringBuilder();
 
                 for (User perUser : users) {
                     buffer.append(String.format(

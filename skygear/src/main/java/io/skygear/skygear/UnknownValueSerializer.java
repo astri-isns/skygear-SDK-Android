@@ -42,8 +42,7 @@ public class UnknownValueSerializer {
                 underlyingType = jsonObject.getString("$underlying_type");
             }
 
-            UnknownValue unknownValue = new UnknownValue(underlyingType);
-            return unknownValue;
+            return new UnknownValue(underlyingType);
         }
 
         throw new JSONException("Invalid $type value: " + typeValue);

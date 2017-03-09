@@ -10,7 +10,6 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -81,7 +80,7 @@ public class LambdaActivity extends AppCompatActivity {
             argList.toArray(argv);
         }
 
-        StringBuffer buff = new StringBuffer();
+        StringBuilder buff = new StringBuilder();
         buff.append("Calling ").append(functionName).append("(");
 
         for (int idx = 0; idx < argc; idx++) {

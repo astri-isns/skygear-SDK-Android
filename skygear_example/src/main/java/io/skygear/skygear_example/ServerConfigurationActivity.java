@@ -10,7 +10,6 @@ import android.widget.EditText;
 
 import io.skygear.skygear.Configuration;
 import io.skygear.skygear.Container;
-import io.skygear.skygear.RegisterDeviceRequest;
 import io.skygear.skygear.gcm.RegistrationIntentService;
 
 public class ServerConfigurationActivity extends AppCompatActivity {

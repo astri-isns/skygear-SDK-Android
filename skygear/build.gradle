@@ -43,14 +43,14 @@ android {
     }
 
     lintOptions {
-        abortOnError false
+        abortOnError true
     }
 }
 
 dependencies {
 
-    compile 'com.google.android.gms:play-services-base:9.8.0'
-    compile 'com.google.android.gms:play-services-gcm:9.8.0'
+    compile 'com.google.android.gms:play-services-base:10.2.0'
+    compile 'com.google.android.gms:play-services-gcm:10.2.0'
 
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.github.seventhmoon:VolleyEx:v0.0.7'

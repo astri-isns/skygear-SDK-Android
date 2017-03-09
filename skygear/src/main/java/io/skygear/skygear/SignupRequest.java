@@ -2,7 +2,6 @@ package io.skygear.skygear;
 
 import java.security.InvalidParameterException;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * The Sign up request.
