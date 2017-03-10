@@ -50,7 +50,7 @@ android {
 dependencies {
 
     compile ('com.google.android.gms:play-services-base:10.2.0'){
-        exclude group: 'com.android.support', module: 'animated-vector-drawable'
+        exclude group: 'com.android.support'
     }
     compile 'com.google.android.gms:play-services-gcm:10.2.0'
     compile 'com.android.support:support-v13:25.2.0'
