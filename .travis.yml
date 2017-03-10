@@ -4,10 +4,10 @@ sudo: false
 
 android:
   components:
-    - platform-tools
     - tools
-    - build-tools-25.0.2
     - android-25
+    - build-tools-25.0.2
+    - platform-tools
     - extra-android-support
     - extra-android-m2repository
     - extra-google-m2repository
@@ -29,6 +29,9 @@ before_script:
 
 script:
   - ./gradlew :skygear:build :skygear:connectedAndroidTest --info --stacktrace
+
+after_script:
+  cat library/build/reports/lint-results.xml
 
 before_deploy:
   - scripts/build-apk.sh
