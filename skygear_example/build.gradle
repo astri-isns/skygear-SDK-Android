@@ -46,9 +46,6 @@ android {
         }
     }
 
-    lintOptions {
-        abortOnError true
-    }
 }
 
 dependencies {
