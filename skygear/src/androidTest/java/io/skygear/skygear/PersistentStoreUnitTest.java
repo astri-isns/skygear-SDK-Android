@@ -31,7 +31,7 @@ public class PersistentStoreUnitTest {
         );
         SharedPreferences.Editor edit = pref.edit();
         edit.clear();
-        edit.commit();
+        edit.apply();
     }
 
     @BeforeClass
@@ -73,7 +73,7 @@ public class PersistentStoreUnitTest {
 
                 "}"
         );
-        editor.commit();
+        editor.apply();
 
         PersistentStore persistentStore = new PersistentStore(instrumentationContext);
         User currentUser = persistentStore.currentUser;
@@ -143,7 +143,7 @@ public class PersistentStoreUnitTest {
 
                 "}]"
         );
-        editor.commit();
+        editor.apply();
 
         PersistentStore persistentStore = new PersistentStore(instrumentationContext);
         AccessControl defaultAccessControl = persistentStore.defaultAccessControl;
@@ -202,7 +202,7 @@ public class PersistentStoreUnitTest {
         );
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(PersistentStore.DEVICE_ID_KEY, "testing-device-id");
-        editor.commit();
+        editor.apply();
 
         PersistentStore persistentStore = new PersistentStore(instrumentationContext);
         assertEquals("testing-device-id", persistentStore.deviceId);
@@ -235,7 +235,7 @@ public class PersistentStoreUnitTest {
         );
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(PersistentStore.DEVICE_ID_KEY, "testing-device-id");
-        editor.commit();
+        editor.apply();
 
         PersistentStore persistentStore = new PersistentStore(instrumentationContext);
         persistentStore.deviceId = null;
@@ -252,7 +252,7 @@ public class PersistentStoreUnitTest {
         );
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(PersistentStore.DEVICE_TOKEN_KEY, "testing-device-token");
-        editor.commit();
+        editor.apply();
 
         PersistentStore persistentStore = new PersistentStore(instrumentationContext);
         assertEquals("testing-device-token", persistentStore.deviceToken);
@@ -285,7 +285,7 @@ public class PersistentStoreUnitTest {
         );
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(PersistentStore.DEVICE_TOKEN_KEY, "testing-device-token");
-        editor.commit();
+        editor.apply();
 
         PersistentStore persistentStore = new PersistentStore(instrumentationContext);
         persistentStore.deviceToken = null;

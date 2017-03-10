@@ -1,5 +1,7 @@
 package io.skygear.skygear;
 
+import android.support.annotation.NonNull;
+
 import java.security.InvalidParameterException;
 import java.util.Collections;
 import java.util.HashMap;
@@ -404,7 +406,7 @@ public class AccessControl {
         }
 
         @Override
-        public int compareTo(Entry another) {
+        public int compareTo(@NonNull Entry another) {
             if (another == null) {
                 return 1;
             }

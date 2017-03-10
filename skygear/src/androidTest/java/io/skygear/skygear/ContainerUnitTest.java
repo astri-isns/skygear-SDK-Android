@@ -25,7 +25,7 @@ public class ContainerUnitTest {
         );
         SharedPreferences.Editor edit = pref.edit();
         edit.clear();
-        edit.commit();
+        edit.apply();
     }
 
     @BeforeClass

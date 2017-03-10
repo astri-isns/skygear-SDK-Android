@@ -1,5 +1,7 @@
 package io.skygear.skygear;
 
+import android.support.annotation.NonNull;
+
 /**
  * The Skygear User Role.
  */
@@ -25,7 +27,7 @@ public class Role implements Comparable<Role> {
     }
 
     @Override
-    public int compareTo(Role another) {
+    public int compareTo(@NonNull Role another) {
         return this.name.compareTo(another.name);
     }
 
