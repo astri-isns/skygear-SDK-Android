@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.security.InvalidParameterException;
+import java.util.Locale;
 import java.util.Queue;
 
 import io.skygear.skygear.AccessControl.Entry;
@@ -198,7 +199,7 @@ public class AccessControlSerializer {
                 return AccessControl.Level.NO_ACCESS;
             }
 
-            String levelStringLowerCase = levelString.toLowerCase();
+            String levelStringLowerCase = levelString.toLowerCase(Locale.US);
             switch (levelStringLowerCase) {
                 case "write":
                     return AccessControl.Level.READ_WRITE;

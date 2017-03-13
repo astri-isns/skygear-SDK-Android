@@ -30,10 +30,6 @@ before_script:
 script:
   - ./gradlew :skygear:build :skygear:connectedAndroidTest --info --stacktrace
 
-after_script:
-  cat skygear/build/reports/lint-results.xml
-  cat skygear_example/build/reports/lint-results.xml
-
 before_deploy:
   - scripts/build-apk.sh
 

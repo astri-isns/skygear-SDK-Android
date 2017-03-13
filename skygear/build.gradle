@@ -42,6 +42,11 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+        textReport true
+        textOutput 'stdout'
+    }
 }
 
 dependencies {
